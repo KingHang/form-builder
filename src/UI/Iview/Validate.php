@@ -88,8 +88,8 @@ class Validate implements ValidateInterface
 
     public function set($validate)
     {
-        array_merge($this->validate, $validate);
-        if (!is_array($validate['fields'])) $validate['fields'] = [];
+        $this->validate = array_merge($this->validate, $validate);
+        if (!is_array($this->validate['fields'])) $this->validate['fields'] = [];
 
         return $this;
     }
